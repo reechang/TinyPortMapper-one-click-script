@@ -43,9 +43,9 @@ install() {
 		echo -e "$red 下载 tinyPortMapper 失败！$none" && exit 1
 	fi
 	tar zxf /tmp/tinyPortMapper.tar.gz -C /tmp/tinyPortMapper
-	cp -f /tmp/tinyPortMapper/$tinymapper /usr/local/bin/tinymapper
-	chmod +x /usr/local/bin/tinymapper
-	if [[ -f /usr/local/bin/tinymapper ]]; then
+	cp -f /tmp/tinyPortMapper/$tinymapper /usr/bin/tinymapper
+	chmod +x /usr/bin/tinymapper
+	if [[ -f /usr/bin/tinymapper ]]; then
 		clear
 		echo -e " 
 		$green tinyPortMapper 安装完成...$none
@@ -69,10 +69,10 @@ install() {
 	rm -rf /tmp/tinyPortMapper.tar.gz
 }
 unistall() {
-	if [[ -f /usr/local/bin/tinymapper ]]; then
+	if [[ -f /usr/bin/tinymapper ]]; then
 		tinyPortMapper_pid=$(pgrep "tinymapper")
 		[ $tinyPortMapper_pid ] && kill -9 $tinyPortMapper_pid >/dev/null 2>&1
-		rm -rf /usr/local/bin/tinymapper
+		rm -rf /usr/bin/tinymapper
 		echo -e " \n$green卸载完成...$none\n" && exit 1
 	else
 		echo -e " \n$red大胸弟...你貌似毛有安装 tinyPortMapper ....卸载个鸡鸡哦...$none\n" && exit 1
