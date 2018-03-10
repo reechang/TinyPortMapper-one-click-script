@@ -68,7 +68,7 @@ install() {
 	rm -rf /tmp/tinyPortMapper
 	rm -rf /tmp/tinyPortMapper.tar.gz
 }
-unistall() {
+uninstall() {
 	if [[ -f /usr/bin/tinymapper ]]; then
 		tinyPortMapper_pid=$(pgrep "tinymapper")
 		[ $tinyPortMapper_pid ] && kill -9 $tinyPortMapper_pid >/dev/null 2>&1
@@ -100,7 +100,7 @@ while :; do
 		break
 		;;
 	2)
-		unistall
+		uninstall
 		break
 		;;
 	*)
