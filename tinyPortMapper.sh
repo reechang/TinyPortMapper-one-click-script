@@ -36,8 +36,8 @@ fi
 
 install() {
 	$cmd install wget -y
-	ver=$(curl -s https://api.github.com/repos/wangyu-/tinyPortMapper/releases/latest | grep 'tag_name' | cut -d\" -f4)
-	tinyPortMapper_download_link="https://github.com/wangyu-/tinyPortMapper/releases/download/$ver/tinymapper_binaries.tar.gz"
+	#ver=$(curl -s https://api.github.com/repos/wangyu-/tinyPortMapper/releases/latest | grep 'tag_name' | cut -d\" -f4)
+	tinyPortMapper_download_link="https://github.com/wangyu-/tinyPortMapper/releases/download/20180224.0/tinymapper_binaries.tar.gz"
 	mkdir -p /tmp/tinyPortMapper
 	if ! wget --no-check-certificate --no-cache -O "/tmp/tinyPortMapper.tar.gz" $tinyPortMapper_download_link; then
 		echo -e "$red 下载 tinyPortMapper 失败！$none" && exit 1
