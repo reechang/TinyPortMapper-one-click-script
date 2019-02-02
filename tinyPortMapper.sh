@@ -5,7 +5,7 @@ green='\e[92m'
 yellow='\e[93m'
 none='\e[0m'
 
-[[ $(id -u) != 0 ]] && echo -e " \n哎呀……请使用 ${red}root ${none}用户运行 ${yellow}~(^_^) ${none}\n" && exit 1
+[[ $(id -u) != 0 ]] && echo -e " \n请使用 ${red}root ${none}用户运行 ${yellow} ${none}\n" && exit 1
 
 cmd="apt-get"
 
@@ -22,7 +22,7 @@ if [[ -f /usr/bin/apt-get ]] || [[ -f /usr/bin/yum ]]; then
 
 else
 
-	echo -e " \n哈哈……这个 ${red}辣鸡脚本${none} 不支持你的系统。 ${yellow}(-_-) ${none}\n" && exit 1
+	echo -e " \n ${red}此脚本${none} 不支持您的系统。 ${yellow}(-_-) ${none}\n" && exit 1
 
 fi
 
@@ -48,22 +48,16 @@ install() {
 	if [[ -f /usr/bin/tinymapper ]]; then
 		clear
 		echo -e " 
-		$green tinyPortMapper 安装完成...$none
+		$green tinyPortMapper 安装完成！$none
 
-		输入$yellow tinymapper $none即可使用....
+		输入$yellow tinymapper $none即可使用.
 
-		备注...这个脚本仅负责安装和卸载...
+		备注：这个脚本仅负责安装和卸载.
 		
-		如何配置...后台运行...开鸡启动这些东西嘛...
-
-		大胸弟....你自己解决咯...
-
-		脚本问题反馈: https://github.com/233boy/tinyPortMapper/issues
 		
-		tinyPortMapper 帮助或反馈: https://github.com/wangyu-/tinyPortMapper
 		"
 	else
-		echo -e " \n$red安装失败...$none\n"
+		echo -e " \n$red安装失败！！！$none\n"
 	fi
 	rm -rf /tmp/tinyPortMapper
 	rm -rf /tmp/tinyPortMapper.tar.gz
@@ -73,9 +67,9 @@ uninstall() {
 		tinyPortMapper_pid=$(pgrep "tinymapper")
 		[ $tinyPortMapper_pid ] && kill -9 $tinyPortMapper_pid >/dev/null 2>&1
 		rm -rf /usr/bin/tinymapper
-		echo -e " \n$green卸载完成...$none\n" && exit 1
+		echo -e " \n$green卸载完成.$none\n" && exit 1
 	else
-		echo -e " \n$red大胸弟...你貌似毛有安装 tinyPortMapper ....卸载个鸡鸡哦...$none\n" && exit 1
+		echo -e " \n$red未安装tinyPortMapper ？ $none\n" && exit 1
 	fi
 }
 error() {
@@ -85,9 +79,9 @@ error() {
 }
 while :; do
 	echo
-	echo "........... tinyPortMapper 快速一键安装 by 233blog.com .........."
+	echo "........... tinyPortMapper 快速一键安装 by Reechang .........."
 	echo
-	echo "帮助说明: 等有空再水一篇文章...."
+	echo "此脚本经Reechang魔改，原作者233boy"
 	echo
 	echo " 1. 安装"
 	echo
