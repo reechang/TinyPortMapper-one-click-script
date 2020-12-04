@@ -7,6 +7,8 @@ apt-get install screen
 
 screen -S tinyport
 
+wget https://raw.githubusercontent.com/reechang/TinyPortMapper-one-click-script/master/tinyPortMapper.sh && bash tinyPortMapper.sh
+
 ```
 
 # 常规使用方法
